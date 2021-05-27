@@ -38,14 +38,13 @@ export default {
   },
   methods: {
     downloadHistory: function(){
-      console.log("History Dowloaded")
-      let csvContent = "data:txt;charset=utf-8,";
-      csvContent += [
+      let txtContent = "data:txt;charset=utf-8,";
+      txtContent += [
         ...this.records.map(item => Object.values(item).join("\t"))
       ]
         .join("\n");
 
-      const data = encodeURI(csvContent);
+      const data = encodeURI(txtContent);
       const link = document.createElement("a");
       link.setAttribute("href", data);
       link.setAttribute("download", "export.txt");
