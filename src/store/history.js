@@ -4,7 +4,7 @@ export default {
     },
     mutations: {
         addHistoryRecord(state, record) {
-            state.historyInfo.push(record);
+            state.historyInfo.unshift(record);
             localStorage.setItem('historyInfo', JSON.stringify(state.historyInfo));
         },
         setHistoryInfo(state, info) {
